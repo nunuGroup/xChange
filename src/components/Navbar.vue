@@ -2,10 +2,10 @@
 <div class="navbar">
     <div class="nav-left">
         <ul class="links">
-            <router-link to="/"><li>Home</li></router-link>
-            <router-link to="/products"><li>Products</li></router-link>
-            <router-link to="/about"><li>About</li></router-link>
-            <router-link to="/signup"><li>Login</li></router-link>
+            <router-link to="/"><li>Home</li><div class="indicator"></div></router-link>
+            <router-link to="/products"><li>Products</li><div class="indicator"></div></router-link>
+            <router-link to="/about"><li>About</li><div class="indicator"></div></router-link>
+            <router-link to="/signup"><li>Login</li><div class="indicator"></div></router-link>
         </ul>
     </div>
     <div class="nav-right">
@@ -35,9 +35,22 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/styles/global';
 
+$indicatorHeight: 1px;
+
 a {
     text-decoration: none;
-    color: black;
+    
+    .indicator {
+        background: black;
+        height: $indicatorHeight;
+        width: 50%;
+        opacity: 0;
+        margin-left: auto;
+        margin-right: auto;
+        transition: $quick;
+        border-radius: 12px 12px 0px 0px;
+        transform: translateY(0px);
+    }
 }
 
 .navbar {
@@ -50,6 +63,22 @@ a {
     position: fixed;
     top: 0px;
     width: 100%;
+
+    li {
+        opacity: 0.4;
+    }
+
+    a.router-link-exact-active {
+        .indicator {
+            width: 100%;
+            opacity: 1;
+        }
+        
+        li {
+            //border-bottom: 1px solid black;
+             opacity: 1 !important;
+        }
+    }
 }
 
 .nav-right {
@@ -100,7 +129,8 @@ a {
         transition: $quick;
 
         &:hover {
-            background: rgba(0,0,0,0.1);
+            //background: rgba(0,0,0,0.1);
+            opacity: 1;
         }
     }
 }

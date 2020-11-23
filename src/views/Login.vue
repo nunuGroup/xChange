@@ -96,10 +96,11 @@ input {
 }
 
 .right {
-    width: 65%;
+    width: 0%;
     height: 100vh;
     background: $main;
     margin: 0px;
+    animation: expand 2s ease forwards;
 }
 
 </style>

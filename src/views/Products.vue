@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Products</h1>
+    <div class="page-container">
+      <h1>Products</h1>
+    </div>
   </div>
 </template>
 

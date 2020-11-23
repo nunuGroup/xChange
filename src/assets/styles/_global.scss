@@ -11,5 +11,15 @@ $rad: 18px;
 
 // ----- animation -----
 
+$ezpz: cubic-bezier(0.65, 0, 0.35, 1);
+
 $translucent: 0.2;
 $quick: 200ms;
+
+@keyframes expand {
+    from {
+        width: 0%;
+    } to {
+        width: 150%;
+    }
+}

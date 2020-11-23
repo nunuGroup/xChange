@@ -1,4 +1,5 @@
 <template>
+  <transition name="slide-fade">
     <div class="page-container">
         <div class="login-container">
             <div class="left">
@@ -14,12 +15,13 @@
                         <div class="button continue">Sign up</div>
                         <div class="button sign-up-google">Sign up with Google</div>
                     </form>
-                    <p>Already have an account? </p><router-link to="/login">Sign in</router-link>
+                    <p>Already have an account? <router-link to="/login">Sign in</router-link></p>
                 </div>
             </div>
             <div class="right"></div>
         </div>
     </div>
+  </transition>
 </template>
 
 <script>
@@ -80,7 +82,7 @@ input {
 }
 
 .left {
-    width: 35%;
+    width: 100%;
     height: 100vh;
     background: white;
     margin: 0px;
@@ -93,10 +95,11 @@ input {
 }
 
 .right {
-    width: 65%;
+    width: 0%;
     height: 100vh;
     background: $main;
     margin: 0px;
+    animation: expand 2s $ezpz forwards;
 }
 
 </style>
