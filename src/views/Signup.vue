@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/global_styles/variables';
+@import '../assets/styles/global';
 
 .continue {
     background: $main !important;

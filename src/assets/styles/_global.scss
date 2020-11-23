@@ -5,8 +5,11 @@
 $main: #71b280;
 
 // ----- dimensions -----
-$navHeight: 80px;
+
+$navHeight: 60px;
 $rad: 18px;
 
 // ----- animation -----
-$trans: 200ms;
+
+$translucent: 0.2;
+$quick: 200ms;

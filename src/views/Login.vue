@@ -22,21 +22,22 @@
 </template>
 
 <script>
-import store from '../store'
+//import store from '../store';
 //import firebase from 'firebase'
 
 export default {
     name: 'Login',
     data() {
         return {
-            modalActive: store.state.modalActive
+            //modalActive: store.state.modalActive
         }
     }
 }
+
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/global_styles/variables';
+@import '../assets/styles/global';
 
 .continue {
     background: $main !important;

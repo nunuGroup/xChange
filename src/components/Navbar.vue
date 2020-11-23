@@ -9,10 +9,8 @@
         </ul>
     </div>
     <div class="nav-right">
-        <form>
-            <input type="search" class="search" aria-label="Search">
-            <button class="button search-button" type="submit">Search</button>
-        </form>
+        <input type="text" class="search" aria-label="Search" placeholder="Search">
+        <div @click="search()" class="button search-button"></div>
     </div>
 </div>  
 </template>
@@ -26,13 +24,16 @@ export default {
         toggleModal() {
             console.log('toggling modal', store.state.modalActive);
             store.commit('toggleModal');
+        },
+        search() {
+            console.log('searching...');
         }
     }
 };
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/global_styles/variables';
+@import '../assets/styles/global';
 
 a {
     text-decoration: none;
@@ -40,7 +41,8 @@ a {
 }
 
 .navbar {
-    background: rgba(0,0,0,0.15);
+    background: white;
+    border-bottom: 1px #e0e0e0 solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,6 +54,35 @@ a {
 
 .nav-right {
     margin-right: 24px;
+    display: flex;
+    align-items: center;
+
+    .search {
+        border: none;
+        background: #eee;
+        border-radius: 36px;
+        height: 36px;
+        padding-left: 12px;
+        padding-right: 36px;
+    }
+
+    .search-button {
+        background: white;
+        margin-left: -30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-image: url('../assets/icons/search.svg');
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        cursor: pointer;
+        transition: 200ms;
+
+        &:hover {
+            filter: brightness(0.7);
+        }
+    }
 }
 
 .links {
@@ -66,9 +97,10 @@ a {
         padding-right: 12px;
         line-height: $navHeight;
         cursor: pointer;
+        transition: $quick;
 
         &:hover {
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.1);
         }
     }
 }
