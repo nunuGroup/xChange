@@ -4,11 +4,11 @@
       <h1 data-scroll data-scroll-speed="2">Welcome home</h1>
   </section>
   <section data-scroll-section id="section2">
-    <h1>Our Products</h1>
+    <h1>Products</h1>
     <div class="product-preview-container">
       <ul class="product-preview-list">
         <li class="item-preview-container">
-          <div class="preview-item-img"></div>
+          <div class="preview-item-img" id="prod-1"></div>
           <div class="preview-item-text">
             <div class="preview-item-text-inner">
               <h3>Item 1</h3>
@@ -17,11 +17,29 @@
             <div class="cart-button">Add to Cart</div>
           </div>
         </li>
-        <li class="item-preview-container"></li>
-        <li class="item-preview-container"></li>
+        <li class="item-preview-container">
+          <div class="preview-item-img" id="prod-2"></div>
+          <div class="preview-item-text">
+            <div class="preview-item-text-inner">
+              <h3>Item 2</h3>
+              <p>This is yet another summary of a lovely product to sell. Perhaps a peekaboo t-shirt? Maybe a neat sticker. Who's to know???</p>
+            </div>
+            <div class="cart-button">Add to Cart</div>
+          </div>
+        </li>
+        <li class="item-preview-container">
+          <div class="preview-item-img" id="prod-3"></div>
+          <div class="preview-item-text">
+            <div class="preview-item-text-inner">
+              <h3>Item 3</h3>
+              <p>It's one thing to pretend. It's another thing to be. Sometime the line doesn't even exist. Just pour all of yourself into everything you do. You are worthy.</p>
+            </div>
+            <div class="cart-button">Add to Cart</div>
+          </div>
+        </li>
       </ul>
     </div>
-    <div class="all-products-button">View all</div>
+    <router-link to="/products"><div class="all-products-button">View all</div></router-link>
   </section>
   <section data-scroll-section id="section3">
     <h1>section3</h1>
@@ -68,6 +86,22 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/styles/global';
 
+#prod-1 {
+  background-image: url("../assets/sample-items/peekaboo-shirt.png");
+}
+
+#prod-2 {
+  background-image: url("../assets/sample-items/hoot-shirt.png");
+}
+
+#prod-3 {
+  background-image: url("../assets/sample-items/monster-shirt.png");
+}
+
+a {
+  text-decoration: none;
+}
+
 h1 {
   margin-top: 42px;
 }
@@ -107,9 +141,12 @@ h1 {
 
 .preview-item-img {
   width: 100%;
-  height: 50%;
+  height: 62%;
   background: gray;
   border-radius: 12px 12px 0px 0px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .preview-item-text-inner {
@@ -124,7 +161,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(50% - 24px);
+  height: calc(38% - 24px);
 
   h3 {
     margin: 0px;
@@ -167,7 +204,7 @@ section {
 
 #section2 {
   background: #eee;
-  height: 75vh;
+  height: 85vh;
 }
 
 </style>
