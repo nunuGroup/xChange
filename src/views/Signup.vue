@@ -1,5 +1,4 @@
 <template>
-  <transition name="slide-fade">
     <div class="page-container">
         <div class="login-container">
             <div class="left">
@@ -10,18 +9,17 @@
                     <h4>START FOR FREE</h4>
                     <h1>Create an account</h1>
                     <form>
-                        <input type="text" placeholder="email"><br>
-                        <input type="password" placeholder="password"><br>
+                        <input class="auth-input" type="text" placeholder="Email"><br>
+                        <input class="auth-input" type="password" placeholder="Password"><br>
                         <div class="button continue">Sign up</div>
-                        <div class="button sign-up-google">Sign up with Google</div>
+                        <div class="button sign-up-google"><div class="google-logo"></div>Sign up with Google</div>
                     </form>
-                    <p>Already have an account? <router-link to="/login">Sign in</router-link></p>
+                    <p>Already have an account? <router-link class="signin-link" to="/login">Sign in</router-link></p>
                 </div>
             </div>
             <div class="right"></div>
         </div>
     </div>
-  </transition>
 </template>
 
 <script>
@@ -41,6 +39,26 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/styles/global';
 
+.google-logo {
+    background-image: url('../assets/icons/google.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 12px;
+    height: 18px;
+    width: 18px;
+}
+
+h4 {
+    opacity: 0.3;
+    font-size: 12px;
+}
+
+.auth-input {
+    background: #eee;
+    border: none;
+}
+
 .continue {
     background: $main !important;
     color: white !important;
@@ -48,6 +66,32 @@ export default {
 
 .form-container {
     width: 400px;
+    opacity: 0;
+    transform: translateX(32px);
+    animation: flyin ease forwards 1s 1s;
+}
+
+.signin-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: $main;
+    transition: $quick;
+
+    &:hover {
+        color: black;
+    }
+}
+
+.continue {
+    //border: 1px solid $main;
+}
+
+.sign-up-google {
+    background: white;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 input {
@@ -65,18 +109,20 @@ input {
     width: 100%;
     border-radius: $rad; 
     margin-bottom: 6px;
-    background: #eee;
+    //background: #eee;
     text-align: center;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: normal;
+    transition: $quick;
 
     &:hover {
-        filter: brightness(0.6);
+        transform: scale(0.95);
     }
 }
 
 .login-container {
     height: 100vh;
+    width: 100vw;
     margin: 0px;
     display: flex;
 }
@@ -95,11 +141,10 @@ input {
 }
 
 .right {
-    width: 0%;
     height: 100vh;
     background: $main;
     margin: 0px;
-    animation: expand 2s $ezpz forwards;
+    animation: expand 2s ease forwards;
 }
 
 </style>

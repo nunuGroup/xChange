@@ -24,6 +24,6 @@ export default {
 @import '../assets/styles/global';
 
 h1 {
-    color: purple;
+    //color: purple;
 }
 </style>

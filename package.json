@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "push": "git add . && git commit -m 'auto-commit' && git push -u origin master",
+    "push": "git add . && git commit -m '$1' && git push -u origin master",
     "stash": "git add . && git commit -m 'stash'",
     "deploy": "npm run build && firebase deploy",
     "serve": "vue-cli-service serve",

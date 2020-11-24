@@ -1,7 +1,9 @@
 <template>
 <div>
   <Navbar/>
-  <router-view/>
+  <transition name="fade" mode="out-in">
+    <router-view/>
+  </transition>
 </div>
 </template>
 
@@ -34,6 +36,13 @@ body {
 }
 
 //transition animation fade
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0;
+}
 
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */

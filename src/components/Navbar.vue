@@ -1,9 +1,10 @@
 <template>
 <div class="navbar">
     <div class="nav-left">
+        <div class="logo-container"></div>
         <ul class="links">
             <router-link to="/"><li>Home</li><div class="indicator"></div></router-link>
-            <router-link to="/products"><li>Products</li><div class="indicator"></div></router-link>
+            <router-link to="/products"><li>All Products</li><div class="indicator"></div></router-link>
             <router-link to="/about"><li>About</li><div class="indicator"></div></router-link>
             <router-link to="/signup"><li>Login</li><div class="indicator"></div></router-link>
         </ul>
@@ -36,6 +37,23 @@ export default {
 @import '../assets/styles/global';
 
 $indicatorHeight: 1px;
+
+.nav-left {
+    display: flex;
+    align-items: center;
+
+    .logo-container {
+        //background: green;
+        height: 36px;
+        width: 36px;
+        margin-left: 24px;
+        background-image: url('../assets/logo-emblem.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+}
 
 a {
     text-decoration: none;
@@ -116,6 +134,7 @@ a {
 
 .links {
     display: flex;
+    padding-left: 24px;
 
     li {
         list-style: none;

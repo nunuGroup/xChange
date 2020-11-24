@@ -2,12 +2,12 @@
 
 // ----- colors -----
 
-$main: #71b280;
+$main: #76B852;
 
 // ----- dimensions -----
 
 $navHeight: 60px;
-$rad: 18px;
+$rad: 24px;
 
 // ----- animation -----
 
@@ -21,5 +21,12 @@ $quick: 200ms;
         width: 0%;
     } to {
         width: 150%;
+    }
+}
+
+@keyframes flyin {
+    to {
+        opacity: 1;
+        transform: translateX(0px);
     }
 }
